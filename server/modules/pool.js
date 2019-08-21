@@ -7,6 +7,8 @@
 
 const pg = require('pg');
 const url = require('url');
+const dbHost = process.env.DB_HOST;
+const dbName = process.env.DB_NAME;
 
 let config = {};
 
@@ -28,14 +30,17 @@ if (process.env.DATABASE_URL) {
   };
 } else {
   config = {
-    host: 'localhost', // Server hosting the postgres database
+    host: dbHost, // Server hosting the postgres database
     port: 5432, // env var: PGPORT
-    database: 'prime_app', // CHANGE THIS LINE! env var: PGDATABASE, this is likely the one thing you need to change to get up and running
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: dbName, // CHANGE THIS LINE! env var: PGDATABASE, this is likely the one thing you need to change to get up and running
     max: 10, // max number of clients in the pool
     idleTimeoutMillis: 30000, // how long a client is allowed to remain idle before being closed
   };
 }
 
+console.log(config)
 // this creates the pool that will be shared by all other modules
 const pool = new pg.Pool(config);
 
