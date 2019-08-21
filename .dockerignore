@@ -1,0 +1,7 @@
+node_modules
+/.idea/
+/.vscode/
+/server/Dockerfile
+/src/Dockerfile
+/data/
+/database.sql

@@ -1,0 +1,52 @@
+version: '3.7'
+
+services:
+
+  client:
+    # All the details docker-compose needs to create our custom container.
+    build:
+      context: .
+      dockerfile: src/Dockerfile # The sp
+    #  I can pass in my .env file to supply a list of environment variables.
+    env_file: .env
+    # Very important!  This is how I will forward all traffic to my local machine on port 3000 to the container's port 3000
+    ports:
+      - "3000:3000"
+    # Also very important, I will mount ("make available") certain paths on my machine ('host') in the container's file system.
+    # This isn't a COPY operation, it's a two-way link.
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+      - /app/node_modules
+
+  server:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    env_file:
+      - .env
+    ports:
+      - "5000:5000"
+      - "9229:9229"
+    volumes:
+      - ./server:/app/server
+
+  db:
+    # Let's just pull the official image.  SO MUCH EASY!!!!
+    image: postgres:latest
+    restart: always
+    # This will let us persist data throughout different container lifecycles.  Learned via the normal image documentation
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    # Here we are passing in some env vars at runtime so the container's automation can just whip up our database for us.
+    environment:
+      POSTGRES_PASSWORD: 'primeordeal'
+      POSTGRES_DB: 'prime-app'
+
+
+  #  Nifty browser-based admin container.  Again, SO MUCH EASY!!!  I don't need a separate SQL browser.
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
