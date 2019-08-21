@@ -63,5 +63,7 @@ typings/
 
 # ignore package-lock as it complicates merging
 package-lock.json
-/.vscode/
-/data/
+.vscode
+.idea
+data
+
