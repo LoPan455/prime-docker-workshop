@@ -13,7 +13,6 @@ WORKDIR /srv/app
 
 # Copy our package.json & package.lock.json into the mixing bowl
 COPY package.json /srv/app
-COPY package-lock.json /srv/app
 COPY ./public /srv/app/public
 COPY ./server /srv/app/server
 COPY ./src /srv/app/src
@@ -28,5 +27,5 @@ RUN npm run-script build
 # Copy our app into the mixing bowl
 COPY ./public /srv/app/public
 
-EXPOSE 3000
+EXPOSE 5000
 CMD [ "npm", "start" ]
