@@ -72,7 +72,7 @@ Junior Dev Benefits:
 
 ## Technical Workshop & Demo
 
-### Single Container
+### Single Container (This code is based on the branch `start`)
 
  	1. Open VSCode
  	2. Install Docker plugin
@@ -81,7 +81,7 @@ Junior Dev Benefits:
  	5. Run the Dockerfile.
  	6. Hit the container with a request.
 
-### Container Orchestration with Docker-Compose!
+### Container Orchestration with Docker-Compose! 
 `https://docs.docker.com/compose/`
 1. Switch to docker-compose branch
 2. Review what docker-compose.yml file will do...
