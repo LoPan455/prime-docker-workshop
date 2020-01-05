@@ -21,7 +21,7 @@ From https://docker-curriculum.com/:
 
 Why is this relevant?
 
-  - This gives developers the ability to create predictable environments that are isolated from rest of the applications and can be run anywhere.
+  - This gives developers the ability to create predictable environments that are isolated from rest of the applications that might be running on the same host and can be run anywhere that Docker is running.  You can build a docker image of your application on Windows and that very same image will run on Linux, macOS, a Raspberry Pi..basically anything that's running the Docker platform.
 
 ## Terminology:
 
@@ -72,7 +72,7 @@ Junior Dev Benefits:
 
 ## Technical Workshop & Demo
 
-### Single Container (This code is based on the branch `start`)
+### Single Container
 
  	1. Open VSCode
  	2. Install Docker plugin
@@ -81,7 +81,7 @@ Junior Dev Benefits:
  	5. Run the Dockerfile.
  	6. Hit the container with a request.
 
-### Container Orchestration with Docker-Compose! 
+### Container Orchestration with Docker-Compose!
 `https://docs.docker.com/compose/`
 1. Switch to docker-compose branch
 2. Review what docker-compose.yml file will do...
