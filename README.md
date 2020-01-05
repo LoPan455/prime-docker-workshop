@@ -21,7 +21,7 @@ From https://docker-curriculum.com/:
 
 Why is this relevant?
 
-  - This gives developers the ability to create predictable environments that are isolated from rest of the applications and can be run anywhere.
+  - This gives developers the ability to create predictable environments that are isolated from rest of the applications that might be running on the same host and can be run anywhere that Docker is running.  You can build a docker image of your application on Windows and that very same image will run on Linux, macOS, a Raspberry Pi..basically anything that's running the Docker platform.
 
 ## Terminology:
 
@@ -90,9 +90,9 @@ Junior Dev Benefits:
 CONGRATULATIONS!  You're a Microservices developer!
 
 ## What's next?
-* Make some images!!!
-* Pull some images!!!
-* Play with a new technology:  Redis?  Plex? Mongo?
+* Make some images!
+* Pull some images!
+* Play with a new technology by running it's official image in Docker Hub:  Redis?  Plex? Mongo?
 * VSCode's Docker plugins
 
 ##Resources:
