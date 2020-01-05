@@ -95,7 +95,7 @@ CONGRATULATIONS!  You're a Microservices developer!
 * Play with a new technology by running it's official image in Docker Hub:  Redis?  Plex? Mongo?
 * VSCode's Docker plugins
 
-##Resources:
+## Resources:
 * https://docker-curriculum.com/
 * https://awesome-docker.netlify.com/
 * PacktPub Books
