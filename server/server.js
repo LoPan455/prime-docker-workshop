@@ -24,6 +24,9 @@ app.use(passport.session());
 
 /* Routes */
 app.use('/api/user', userRouter);
+app.use('/hello', (req, res) => {
+  res.send("welcome!");
+})
 
 // Serve static files
 app.use(express.static('build'));

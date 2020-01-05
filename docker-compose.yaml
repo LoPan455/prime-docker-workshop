@@ -42,6 +42,8 @@ services:
     environment:
       POSTGRES_PASSWORD: 'primeordeal'
       POSTGRES_DB: 'prime-app'
+    ports:
+      - "5432:5432"
 
 
   #  Nifty browser-based admin container.  Again, SO MUCH EASY!!!  I don't need a separate SQL browser.
